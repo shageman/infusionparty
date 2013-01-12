@@ -25,10 +25,18 @@ class VotesController < ApplicationController
   # GET /votes/new.json
   def new
     drink_ids_to_sample = Drink.pluck(:id).sample(2)
-    @vote = Vote.new(drink1_id: drink_ids_to_sample.first, drink2_id: drink_ids_to_sample.second)
+    @votes = Category.all.inject([]) do |result, category|
+      result << Vote.new(
+          drink1_id: drink_ids_to_sample.first,
+          drink2_id: drink_ids_to_sample.second,
+          category_id: category.id,
+          answer: nil
+      )
+      result
+    end
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @vote }
     end
   end
