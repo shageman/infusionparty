@@ -2,7 +2,7 @@
   - %w(best_presentation most_drinkable most_adventurous).each do |category|
     .span12{id: category}
       .row
-        %label= category.titleize
+        %label{style:"text-align: center"}= category.titleize
         .switch.switch-three.candy.blue
           %input{id: "drink1_#{category}", :name => category, :type => "radio"}
           %label{:for => "drink1_#{category}", :onclick => ""}
