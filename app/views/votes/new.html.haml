@@ -1,6 +1,4 @@
 %h1 New vote
 
 - @votes.each do |vote|
-  =render 'form', locals: {vote: vote}
-
-<%= link_to 'Back', votes_path %>
+  = render partial: 'form', locals: {vote: vote}
