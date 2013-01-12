@@ -1,14 +1,41 @@
 = form_for @vote do |f|
-  %label Best Presentation
-  .switch.switch-three.candy.blue
-    %input#drink1{:name => "best_presentation", :type => "radio"}
-    %label{:for => "drink1", :onclick => ""}
-      = @vote.drink1.name
-    %input#no_vote{:checked => "", :name => "best_presentation", :type => "radio"}
-    %label{:for => "no_vote", :onclick => ""} No Vote
-    %input#drink2{:name => "best_presentation", :type => "radio"}
-    %label{:for => "drink2", :onclick => ""}
-      = @vote.drink2.name
-    %span.slide-button
-  .actions
-    = f.submit
+  .row
+    %label Best Presentation
+    .switch.switch-three.candy.blue
+      %input#drink1_best_presentation{:name => "best_presentation", :type => "radio"}
+      %label{:for => "drink1_best_presentation", :onclick => ""}
+        Drink 1
+      %input#no_vote_best_presentation{:checked => "", :name => "best_presentation", :type => "radio"}
+      %label{:for => "no_vote_best_presentation", :onclick => ""} No Vote
+      %input#drink2_best_presentation{:name => "best_presentation", :type => "radio"}
+      %label{:for => "drink2_best_presentation", :onclick => ""}
+        Drink 2
+      %span.slide-button
+  .row
+    %label Most Drinkable
+    .switch.switch-three.candy.blue
+      %input#drink1_most_drinkable{:name => "most_drinkable", :type => "radio"}
+      %label{:for => "drink1_most_drinkable", :onclick => ""}
+        Drink 1
+      %input#no_vote_most_drinkable{:checked => "", :name => "most_drinkable", :type => "radio"}
+      %label{:for => "no_vote_most_drinkable", :onclick => ""} No Vote
+      %input#drink2_most_drinkable{:name => "most_drinkable", :type => "radio"}
+      %label{:for => "drink2_most_drinkable", :onclick => ""}
+        Drink 2
+      %span.slide-button
+  .row
+    %label Most Adventurous
+    .switch.switch-three.candy.blue
+      %input#drink1_most_adventurous{:name => "most_adventurous", :type => "radio"}
+      %label{:for => "drink1_most_adventurous", :onclick => ""}
+        Drink 1
+      %input#no_vote_most_adventurous{:checked => "", :name => "most_adventurous", :type => "radio"}
+      %label{:for => "no_vote_most_adventurous", :onclick => ""} No Vote
+      %input#drink2_most_adventurous{:name => "most_adventurous", :type => "radio"}
+      %label{:for => "drink2_most_adventurous", :onclick => ""}
+        Drink 2
+      %span.slide-button
+
+  .actions.offset3
+    = f.submit 'Vote', {class: "btn btn-success btn-large"}
+    .btn.btn-large Skip
