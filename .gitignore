@@ -14,4 +14,5 @@ capybara-*.html
 /spec/tmp/*
 **.orig
 rerun.txt
-pickle-email-*.html
+pickle-emaiol-*.html
+public/**
