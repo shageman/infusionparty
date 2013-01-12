@@ -1,8 +1,6 @@
 Infusionparty::Application.routes.draw do
-  resources :votes
-
-
-  root to: 'drinks#index'
+  root to: 'votes#new'
   resources :drinks
   resources :categories
+  resources :votes
 end
