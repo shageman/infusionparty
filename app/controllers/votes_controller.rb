@@ -24,7 +24,8 @@ class VotesController < ApplicationController
   # GET /votes/new
   # GET /votes/new.json
   def new
-    @vote = Vote.new
+    drink_ids_to_sample = Drink.pluck(:id).sample(2)
+    @vote = Vote.new(drink1_id: drink_ids_to_sample.first, drink2_id: drink_ids_to_sample.second)
 
     respond_to do |format|
       format.html # new.html.erb
