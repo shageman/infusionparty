@@ -14,5 +14,5 @@ end
 
 50.times do
   drinks = Drink.all.sample(2)
-  Vote.create!(best_presentation: drinks.sample, most_drinkable: drinks.sample most_adventerous: drinks.sample)
+  Vote.create!(best_presentation: drinks.sample.id, most_drinkable: drinks.sample.id, most_adventurous: drinks.sample.id)
 end
