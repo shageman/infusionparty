@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/benjaminleesmith/trueskill.git
+  revision: e404f45af5b3fb86982881ce064a9c764cc6a901
+  specs:
+    trueskill (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -130,5 +136,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
+  trueskill!
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

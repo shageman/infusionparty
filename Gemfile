@@ -5,6 +5,7 @@ gem 'haml'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+gem "trueskill", git: "git://github.com/benjaminleesmith/trueskill.git"
 
 group :development do
   gem 'sqlite3'

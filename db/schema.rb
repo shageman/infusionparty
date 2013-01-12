@@ -11,13 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130112063417) do
+ActiveRecord::Schema.define(:version => 20130112204349) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.float    "drinkable_mean"
+    t.float    "drinkable_deviation"
+    t.float    "presentation_mean"
+    t.float    "presentation_deviation"
+    t.float    "adventure_mean"
+    t.float    "adventure_deviation"
   end
 
   create_table "votes", :force => true do |t|

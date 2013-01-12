@@ -1,0 +1,15 @@
+%h1 Presentability
+%table
+  %tr
+    %th Drink
+    %th drinkable
+    %th
+  - @drinks.each do |drink|
+    %tr
+      %td
+        = drink.name
+      %td
+        = drink.presentation_mean
+      %td
+        = drink.presentation_deviation
+
