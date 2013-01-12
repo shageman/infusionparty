@@ -1,18 +1,19 @@
 = form_for @vote do |f|
   - %w(best_presentation most_drinkable most_adventurous).each do |category|
-    .span12{id: category}
-      .row
-        %label{style:"text-align: center"}= category.titleize
-        .switch.switch-three.candy.blue
-          %input{id: "drink1_#{category}", :name => category, :type => "radio"}
-          %label{:for => "drink1_#{category}", :onclick => ""}
-            Drink 1
-          %input#no_vote_best_presentation{:checked => "", :name => category, :type => "radio"}
-          %label{:for => "drink2_#{category}", :onclick => ""} No Vote
-          %input#drink2_best_presentation{:name => category, :type => "radio"}
-          %label{:for => "drink2_#{category}", :onclick => ""}
-            Drink 2
-          %span.slide-button
+    .row
+      .span12{id: category}
+    .row
+      %label{style:"text-align: center"}= category.titleize
+      .switch.switch-three.candy.blue
+        %input{id: "drink1_#{category}", :name => category, :type => "radio"}
+        %label{:for => "drink1_#{category}", :onclick => ""}
+          Drink 1
+        %input#no_vote_best_presentation{:checked => "", :name => category, :type => "radio"}
+        %label{:for => "drink2_#{category}", :onclick => ""} No Vote
+        %input#drink2_best_presentation{:name => category, :type => "radio"}
+        %label{:for => "drink2_#{category}", :onclick => ""}
+          Drink 2
+        %span.slide-button
 
   .row
     = f.submit 'Vote', {class: "btn btn-success btn-large span6"}
