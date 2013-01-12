@@ -1,4 +1,6 @@
 = form_for @vote do |f|
+  = f.hidden_field :drink1_id
+  = f.hidden_field :drink2_id
   - %w(best_presentation most_drinkable most_adventurous).each do |category|
     .row
       .span12{id: category}

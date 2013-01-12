@@ -1,7 +1,7 @@
 class Vote < ActiveRecord::Base
   belongs_to :drink1, class_name: "Drink"
   belongs_to :drink2, class_name: "Drink"
-  attr_accessible :drink1, :drink2, :best_presentation, :most_drinkable, :most_adventurous
+  attr_accessible :drink1, :drink2, :drink1_id, :drink2_id, :best_presentation, :most_drinkable, :most_adventurous
 
   validates_presence_of :drink1, :drink2
 
