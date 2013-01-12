@@ -1,0 +1,25 @@
+%h1 Votes
+%table
+  %tr
+    %th Drink1
+    %th Drink2
+    %th presentation
+    %th adventurous
+    %th drinkable
+  - @votes.each do |vote|
+    %tr
+      %td
+        = vote.drink1.id
+        -
+        = vote.drink1.name
+      %td
+        = vote.drink2.id
+        -
+        = vote.drink2.name
+      %td
+        = vote.best_presentation
+      %td
+        = vote.most_adventurous
+      %td
+        = vote.most_drinkable
+
