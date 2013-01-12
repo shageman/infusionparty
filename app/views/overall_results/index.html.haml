@@ -2,14 +2,11 @@
 %table
   %tr
     %th Drink
-    %th Presentability
-    %th
+    %th Overall
   - @drinks.each do |drink|
     %tr
       %td
         = drink.name
       %td
-        = drink.presentation_mean
-      %td
-        = drink.presentation_deviation
+        = drink.presentation_mean + drink.drinkable_mean + drink.adventure_mean
 

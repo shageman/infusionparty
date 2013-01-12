@@ -5,4 +5,5 @@ Infusionparty::Application.routes.draw do
   resources :presentability_results, only: [:index]
   resources :drinkability_results, only: [:index]
   resources :adventure_results, only: [:index]
+  resources :overall_results, only: [:index]
 end
