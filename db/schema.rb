@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130112043130) do
+ActiveRecord::Schema.define(:version => 20130112053911) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
@@ -19,5 +25,18 @@ ActiveRecord::Schema.define(:version => 20130112043130) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "drink1_id"
+    t.integer  "drink2_id"
+    t.integer  "category_id"
+    t.integer  "answer"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "votes", ["category_id"], :name => "index_votes_on_category_id"
+  add_index "votes", ["drink1_id"], :name => "index_votes_on_drink1_id"
+  add_index "votes", ["drink2_id"], :name => "index_votes_on_drink2_id"
 
 end

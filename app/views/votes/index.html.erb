@@ -1,0 +1,29 @@
+<h1>Listing votes</h1>
+
+<table>
+  <tr>
+    <th>Drink1</th>
+    <th>Drink2</th>
+    <th>Category</th>
+    <th>Answer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @votes.each do |vote| %>
+  <tr>
+    <td><%= vote.drink1 %></td>
+    <td><%= vote.drink2 %></td>
+    <td><%= vote.category %></td>
+    <td><%= vote.answer %></td>
+    <td><%= link_to 'Show', vote %></td>
+    <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
+    <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vote', new_vote_path %>
