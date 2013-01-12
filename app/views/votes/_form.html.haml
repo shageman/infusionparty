@@ -1,41 +1,20 @@
 = form_for @vote do |f|
-  .row
-    %label Best Presentation
-    .switch.switch-three.candy.blue
-      %input#drink1_best_presentation{:name => "best_presentation", :type => "radio"}
-      %label{:for => "drink1_best_presentation", :onclick => ""}
-        Drink 1
-      %input#no_vote_best_presentation{:checked => "", :name => "best_presentation", :type => "radio"}
-      %label{:for => "no_vote_best_presentation", :onclick => ""} No Vote
-      %input#drink2_best_presentation{:name => "best_presentation", :type => "radio"}
-      %label{:for => "drink2_best_presentation", :onclick => ""}
-        Drink 2
-      %span.slide-button
-  .row
-    %label Most Drinkable
-    .switch.switch-three.candy.blue
-      %input#drink1_most_drinkable{:name => "most_drinkable", :type => "radio"}
-      %label{:for => "drink1_most_drinkable", :onclick => ""}
-        Drink 1
-      %input#no_vote_most_drinkable{:checked => "", :name => "most_drinkable", :type => "radio"}
-      %label{:for => "no_vote_most_drinkable", :onclick => ""} No Vote
-      %input#drink2_most_drinkable{:name => "most_drinkable", :type => "radio"}
-      %label{:for => "drink2_most_drinkable", :onclick => ""}
-        Drink 2
-      %span.slide-button
-  .row
-    %label Most Adventurous
-    .switch.switch-three.candy.blue
-      %input#drink1_most_adventurous{:name => "most_adventurous", :type => "radio"}
-      %label{:for => "drink1_most_adventurous", :onclick => ""}
-        Drink 1
-      %input#no_vote_most_adventurous{:checked => "", :name => "most_adventurous", :type => "radio"}
-      %label{:for => "no_vote_most_adventurous", :onclick => ""} No Vote
-      %input#drink2_most_adventurous{:name => "most_adventurous", :type => "radio"}
-      %label{:for => "drink2_most_adventurous", :onclick => ""}
-        Drink 2
-      %span.slide-button
+  - %w(best_presentation most_drinkable most_adventurous).each do |category|
+    .span12{id: category}
+      .row
+        %label= category.titleize
+        .switch.switch-three.candy.blue
+          %input{id: "drink1_#{category}", :name => category, :type => "radio"}
+          %label{:for => "drink1_#{category}", :onclick => ""}
+            Drink 1
+          %input#no_vote_best_presentation{:checked => "", :name => category, :type => "radio"}
+          %label{:for => "drink2_#{category}", :onclick => ""} No Vote
+          %input#drink2_best_presentation{:name => category, :type => "radio"}
+          %label{:for => "drink2_#{category}", :onclick => ""}
+            Drink 2
+          %span.slide-button
 
-  .actions.offset3
-    = f.submit 'Vote', {class: "btn btn-success btn-large"}
-    .btn.btn-large Skip
+  .row
+    = f.submit 'Vote', {class: "btn btn-success btn-large span6"}
+
+    .btn.btn-large.span6{onclick: 'window.location = window.location'} Skip
