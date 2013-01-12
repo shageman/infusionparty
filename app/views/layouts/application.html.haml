@@ -22,8 +22,6 @@
           / For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
           / Size should be 57 x 57 pixels
           = favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-          / For all other devices
-          / Size should be 32 x 32 pixels
           = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
   %body
     .navbar.navbar-fluid-top
@@ -39,7 +37,6 @@
               %li= link_to "Link1", "/path1"
               %li= link_to "Link2", "/path2"
               %li= link_to "Link3", "/path3"
-          / /.nav-collapse
     .container-fluid
       .row-fluid
         .span3
@@ -49,17 +46,7 @@
               %li= link_to "Link1", "/path1"
               %li= link_to "Link2", "/path2"
               %li= link_to "Link3", "/path3"
-          / /.well
-        / /span
         .span9
           = bootstrap_flash
           = yield
-      / /row
-      %footer
-        %p © Company 2012
-    / /container
-    /
-      Javascripts
-      \==================================================
-    / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
