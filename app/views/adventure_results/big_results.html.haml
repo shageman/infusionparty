@@ -1,0 +1,46 @@
+%h1 Adventure
+%table
+  %tr
+    %th Drink
+    %th Adventure
+    %th
+  - @adventure.each do |drink|
+    %tr
+      %td
+        = drink.name
+      %td
+        = drink.adventure_mean
+      %td
+        = drink.adventure_deviation
+
+%h1 Presentation
+%table
+  %tr
+    %th Drink
+    %th Presentation
+    %th
+  - @presentable.each do |drink|
+    %tr
+      %td
+        = drink.name
+      %td
+        = drink.adventure_mean
+      %td
+        = drink.adventure_deviation
+
+
+%h1 Drinkable
+%table
+  %tr
+    %th Drink
+    %th Drinkable
+    %th
+  - @drinkable.each do |drink|
+    %tr
+      %td
+        = drink.name
+      %td
+        = drink.adventure_mean
+      %td
+        = drink.adventure_deviation
+
