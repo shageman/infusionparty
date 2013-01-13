@@ -8,9 +8,9 @@ class VotesController < ApplicationController
     @vote = Vote.new(params[:vote])
 
     if @vote.save
-      redirect_to new_vote_url, notice: 'Vote was successfully created.'
+      redirect_to root_url, flash: { notice: 'Vote was successfully created.' }
     else
-      render action: "new"
+      redirect_to root_url, flash: { error: "The Vote was not cast: Please skip if you don't want to pick one" }
     end
   end
 end
