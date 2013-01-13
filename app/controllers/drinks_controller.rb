@@ -1,6 +1,6 @@
 class DrinksController < ApplicationController
   def index
-    @drinks = Drink.all
+    @drinks = Drink.order(:name).all
   end
 
   def new
