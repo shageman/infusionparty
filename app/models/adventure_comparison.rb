@@ -14,9 +14,9 @@ class AdventureComparison
     Vote.all.each do |vote|
       drink1 = drink1(@adventure_drinks, vote, :adventure_rating)
       drink2 = drink2(@adventure_drinks, vote, :adventure_rating)
-      if vote.most_drinkable == 0
+      if vote.most_adventurous == 0
         FactorGraph.new([drink1, drink2], [1,2]).update_skills
-      elsif vote.most_drinkable == 1
+      elsif vote.most_adventurous == 1
         FactorGraph.new([drink2, drink1], [1,2]).update_skills
       end
     end
