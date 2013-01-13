@@ -25,12 +25,12 @@
     .row
       %label{style:"text-align: center"}= category.titleize
       .switch.switch-three.candy.blue
-        %input{id: "drink1_#{category}", :name => category, :type => "radio"}
+        %input{id: "drink1_#{category}", :name => "vote[#{category}]", :type => "radio", :value => 0}
         %label{:for => "drink1_#{category}", :onclick => ""}
           Drink 1
-        %input#no_vote_best_presentation{:checked => "", :name => category, :type => "radio"}
-        %label{:for => "drink2_#{category}", :onclick => ""} No Vote
-        %input#drink2_best_presentation{:name => category, :type => "radio"}
+        %input{id: "no_vote_#{category}", :checked => "", :name => "vote[#{category}]", :type => "radio", :value => ""}
+        %label{:for => "no_vote_#{category}", :onclick => ""} No Vote
+        %input{id: "drink2_#{category}", :name => "vote[#{category}]", :type => "radio", :value => 1}
         %label{:for => "drink2_#{category}", :onclick => ""}
           Drink 2
         %span.slide-button
